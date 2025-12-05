@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="nb">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SmartSvar — Start</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body class="bg">
+    <!-- TOP LOGO -->
+    <header class="topbar">
+      <img
+        class="logo"
+        src="{{ url_for('static', filename='SvarSmart_logo.png') }}"
+      />
+    </header>
+
+    <!-- HERO SECTION -->
+    <main class="hero">
+      <div class="hero-card">
+        <h1>Usikker på hva du skal svare?</h1>
+
+        <p class="muted">
+          SmartSvar hjelper deg skrive perfekte meldinger — raskt og personlig.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn primary" href="/annen">Start chat</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2025 SmartSvar</p>
+    </footer>
+  </body>
+</html>

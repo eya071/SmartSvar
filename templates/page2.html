@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="nb">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartSvar – Chat</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body class="bg">
+    <header class="topbar">
+      <img
+        src="{{ url_for('static', filename='SvarSmart_logo.png') }}"
+        class="logo"
+      />
+    </header>
+
+    <main class="chat-layout">
+      <!-- VENSTRE PANEL -->
+      <section class="settings-card">
+        <h2>Innstillinger</h2>
+
+        <label>Hvem skriver du til?</label>
+        <input type="text" placeholder="Skriv hvem du skriver til" />
+
+        <label>Tone</label>
+        <input type="text" placeholder="Skriv tonen (f.eks. romantisk)" />
+
+        <label>Lengde</label>
+        <input type="text" placeholder="Kort, middels eller lang" />
+
+        <label for="stil">Språkstil</label>
+        <input id="stil" type="text" placeholder="Skriv språkstilen" />
+      </section>
+
+      <!-- HØYRE PANEL -->
+      <section class="chat-window">
+        <textarea
+          class="chat-input"
+          placeholder="Skriv meldingen..."
+        ></textarea>
+
+        <div class="chat-buttons">
+          <button class="btn primary small">Send</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2025 SmartSvar</p>
+    </footer>
+  </body>
+</html>

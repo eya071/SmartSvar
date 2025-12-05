@@ -1,0 +1,235 @@
+/* ------------------------------
+   VARIABLES
+--------------------------------*/
+:root {
+  --bg-dark: #0a0f2d;
+  --bg-deep: #12094a;
+
+  --accent1: #2db7ff;
+  --accent2: #6f4dfd;
+  --pink: #d90ec8;
+
+  --glass: rgba(255, 255, 255, 0.07);
+  --glass-light: rgba(255, 255, 255, 0.12);
+  --muted: rgba(255, 255, 255, 0.75);
+
+  --radius: 16px;
+}
+
+/* ------------------------------
+   GLOBAL
+--------------------------------*/
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: white;
+
+  background: radial-gradient(circle at 20% 25%, #12094a, transparent 55%),
+    radial-gradient(circle at 80% 30%, rgba(255, 79, 177, 0.5), transparent 60%),
+    radial-gradient(circle at 60% 90%, rgba(120, 60, 255, 0.4), transparent 65%),
+    linear-gradient(180deg, var(--bg-dark), var(--bg-deep));
+
+  background-attachment: fixed;
+}
+
+/* ------------------------------
+   LOGO - TOP LEFT
+--------------------------------*/
+.topbar {
+  position: fixed;
+  top: 25px;
+  left: 35px;
+  z-index: 100;
+}
+
+.logo {
+  height: 55px;
+  filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.7));
+}
+
+/* ------------------------------
+   LANDING PAGE HERO
+--------------------------------*/
+.hero {
+  display: flex;
+  justify-content: center;
+  padding-top: 170px;
+}
+
+.hero-card {
+  width: 60%;
+  max-width: 900px;
+
+  padding: 50px;
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+
+  border-radius: 26px;
+  text-align: center;
+
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.45);
+}
+
+.hero-card h1 {
+  font-size: 60px;
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+
+.hero-card .muted {
+  font-size: 20px;
+  opacity: 0.9;
+  margin-bottom: 45px;
+}
+
+/* BUTTONS */
+.btn {
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 14px;
+  padding: 14px 24px;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, var(--pink), var(--accent2));
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 16px 36px;
+
+  box-shadow: 0 8px 22px rgba(255, 79, 177, 0.45);
+}
+
+.cta-row {
+  text-align: center;
+}
+
+/* ------------------------------
+   CHAT PAGE
+--------------------------------*/
+/* ------------------------------
+   LAYOUT WRAPPER
+--------------------------------*/
+.chat-layout {
+  display: flex;
+  gap: 80px;
+
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 120px 40px;
+  align-items: flex-start;
+}
+
+/* ------------------------------
+   SETTINGS PANEL (VENSTRE)
+--------------------------------*/
+.settings-card {
+  width: 280px;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 32px;
+  border-radius: 22px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.28);
+  box-sizing: border-box; /* 👈 Fix */
+}
+
+.settings-card label {
+  font-size: 15px;
+  color: #ffffffd5;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.settings-card input {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 22px;
+
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  font-size: 16px;
+
+  box-sizing: border-box; /* 👈 Fix */
+}
+
+/* Main button */
+.btn.full {
+  width: 100%;
+  padding: 16px;
+  border-radius: 14px;
+  background: white;
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+}
+
+.btn.full:hover {
+  background: #e7e7e7;
+}
+
+/* ------------------------------
+   CHAT PANEL (HØYRE)
+--------------------------------*/
+.chat-window {
+  flex: 1;
+
+  background: rgba(255, 255, 255, 0.09);
+  padding: 40px;
+  border-radius: 26px;
+  backdrop-filter: blur(14px);
+
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.45);
+}
+
+/* textarea */
+.chat-input {
+  width: 100%;
+  height: 240px;
+  resize: none;
+
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.28);
+  border: none;
+  border-radius: 16px;
+
+  color: white;
+  outline: none;
+  font-size: 17px;
+}
+
+/* button container */
+.chat-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* send button */
+.btn.small {
+  padding: 12px 26px;
+  font-size: 16px;
+  background: linear-gradient(135deg, var(--pink), var(--accent2));
+  color: white;
+  font-weight: 650;
+
+  border-radius: 16px;
+  box-shadow: 0 5px 14px rgba(255, 79, 177, 0.4);
+}
+
+/* ------------------------------
+   FOOTER
+--------------------------------*/
+.site-footer {
+  text-align: center;
+  padding: 50px 0;
+  margin-top: 140px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  letter-spacing: 0.6px;
+}
