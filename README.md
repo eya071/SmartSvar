@@ -54,3 +54,7 @@ http://127.0.0.1:5000/
 - Velg hvem du skriver til, tone og lengde.
 
 - Klikk på "Generer svar" for å få forslag.
+
+# Design
+
+Se vårt design i Figma her: [SmartSvar Design](https://www.figma.com/design/pP94rviMLn1bzxgkIvEYAa/Untitled?node-id=0-1&t=aMrNqeQt2NEbvUWQ-1).
