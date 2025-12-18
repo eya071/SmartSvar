@@ -32,21 +32,81 @@
         <label>Lengde</label>
         <input type="text" placeholder="Kort, middels eller lang" />
 
-        <label for="stil">Språkstil</label>
-        <input id="stil" type="text" placeholder="Skriv språkstilen" />
+        <label for="stil">Språk</label>
+        <input id="stil" type="text" placeholder="Skriv språk" />
       </section>
 
       <!-- HØYRE PANEL -->
       <section class="chat-window">
+        <div id="chat-messages" class="chat-messages"></div>
+
         <textarea
+          id="chat-input"
           class="chat-input"
           placeholder="Skriv meldingen..."
         ></textarea>
 
         <div class="chat-buttons">
-          <button class="btn primary small">Send</button>
+          <button class="btn primary small" onclick="sendMessage()">
+            Generer svar
+          </button>
         </div>
       </section>
+
+      <script>
+        const chatInput = document.getElementById("chat-input");
+        const chatMessages = document.getElementById("chat-messages");
+        let firstClickDone = false; // holder styr på første klikk
+
+        function createMessageElement(message, sender) {
+          const div = document.createElement("div");
+          div.classList.add("chat-bubble", sender); // 'user' eller 'bot'
+          div.innerText = message;
+          return div;
+        }
+
+        function sendMessage() {
+          const message = chatInput.value.trim();
+          if (!message) return;
+
+          // Vis brukerens melding
+          chatMessages.appendChild(createMessageElement(message, "user"));
+          chatInput.value = "";
+
+          // Send til Flask
+          fetch("/generate", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ melding: message }),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              // Vis botens svar
+              chatMessages.appendChild(
+                createMessageElement(data.forslag, "bot")
+              );
+              chatMessages.scrollTop = chatMessages.scrollHeight; // scroll til siste melding
+            });
+
+          firstClickDone = true;
+        }
+
+        // Lytt på Enter-tast
+        chatInput.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" && !e.shiftKey) {
+            // Shift+Enter for linjeskift
+            e.preventDefault();
+            if (firstClickDone) {
+              sendMessage();
+            }
+          }
+        });
+
+        // Første gang må man klikke på knappen
+        document
+          .querySelector(".btn.primary.small")
+          .addEventListener("click", sendMessage);
+      </script>
     </main>
 
     <footer class="site-footer">
